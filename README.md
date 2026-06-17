@@ -30,15 +30,16 @@ curl http://localhost:8080/api/users
 
 ### 1. Créer une branche de travail
 
-```bash
-git checkout -b feature/get-user-by-id
-```
+ Par exemple : `feature/get-user-by-id`
 
-### 2. Écrire un test unitaire
+
+### 2. Écrire un test unitaire et implémenter un nouveau endpoint
+
+On aimerait ajouter un nouveau fonctionalité pour retourner un utlisateur par son identifiant. 
+Implémentez l'endpoint `GET /api/users/{id}` dans le contrôleur existant.
+On doit egalement ajouter un test pour un nouvel endpoint `GET /api/users/{id}` qui retourne un utilisateur par son identifiant.
 
 Un squelette de test est fourni dans `src/test/java/com/eval/testtech/controller/UserControllerTest.java` avec le mock et l'injection déjà configurés.
-
-Complétez ce test pour un nouvel endpoint `GET /api/users/{id}` qui retourne un utilisateur par son identifiant.
 
 Le test doit :
 - Utiliser **Mockito** pour mocker le `UserRepository`
@@ -48,10 +49,6 @@ Pour lancer les tests :
 ```bash
 mvn test -Dtest=UserControllerTest
 ```
-
-### 3. Implémenter l'endpoint
-
-Implémentez l'endpoint `GET /api/users/{id}` dans le contrôleur existant.
 
 ### 4. Réconcilier avec main
 
